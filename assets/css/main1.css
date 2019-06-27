@@ -1424,13 +1424,13 @@ input, select, textarea {
 			margin-top: 1.25em;
 		}
 
-/* Banner */
+
 
 	#banner {
-		position: relative;
+		position: absolute;
 		overflow: hidden;
 		background: #fff;
-		color: #ddd;
+		color: #fff;
 		text-align: center;
 		border-top: solid 2px #e5e5e5;
 		border-bottom: solid 2px #e5e5e5;
