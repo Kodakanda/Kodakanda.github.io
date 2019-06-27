@@ -1429,7 +1429,7 @@ input, select, textarea {
 	#banner {
 		position: absolute;
 		overflow: hidden;
-		background: #fff;
+		background: #000;
 		color: #fff;
 		text-align: center;
 		border-top: solid 2px #e5e5e5;
@@ -1437,9 +1437,9 @@ input, select, textarea {
 		box-shadow: inset 0px -8px 0px 0px #fff, inset 0px 8px 0px 0px #fff;
 		position: relative;
 		text-transform: uppercase;
-		background: url(images/banner.jpg);
+		background-image:url(images/banner.jpg);
 		background-size: cover;
-		padding: 10em 0;
+		padding: 1em 0;
 	}
 
 		#banner p {
