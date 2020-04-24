@@ -1,6 +1,9 @@
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700");
 
+.nav-span{
+	font-size: 0.7em;
+}
 
 html, body, div, span,  table, tbody, tfoot, thead, footer, header,  menu, nav, section {
 	margin: 0;
@@ -1316,7 +1319,7 @@ input, select, textarea {
 			font-weight: 800;
 			color: #ddd;
 			text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.2);
-			font-size: 3em;
+			font-size: 5em;
 			letter-spacing: 13px;
 			margin-top: 5vh;
 		}
@@ -1575,7 +1578,7 @@ input, select, textarea {
 			}
 
 			#header h1 {
-				font-size: 2.5em;
+				font-size: 3em;
 			}
 
 		/* Nav */
