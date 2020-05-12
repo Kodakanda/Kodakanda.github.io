@@ -1,4 +1,18 @@
-<!DOCTYPE HTML>
+<?php
+	if(isset($_POST['client_name']) && isset($_POST['order_type_id']) && isset($_POST['client_phone']) && isset($_POST['order_comment'])){
+		$clientName = $_POST['client_name'];
+		$orderTypeId = $_POST['order_type_id'];
+		$clientPhone = $_POST['client_phone'];
+		$orderComment = $_POST['order_comment'];
+		$sql = "INSERT INTO 
+				orders (phone_number, client_name, comment, order_type_id) 
+			VALUES 
+				('$clientPhone', '$clientName', '$orderComment', $orderTypeId)";
+		$dbInterface->db->query($sql);
+	}else{
+		echo 'Неверные данные';
+	}
+?>
 
 <html>
 	<head>
@@ -207,6 +221,8 @@
 											</ul>
 										</div>
 										
+									<?php require('items/form.html') ?>
+
 									</div>
 								</section>
 							</div>
