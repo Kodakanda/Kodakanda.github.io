@@ -9,8 +9,6 @@
 			VALUES 
 				('$clientPhone', '$clientName', '$orderComment', $orderTypeId)";
 		$dbInterface->db->query($sql);
-	}else{
-		echo 'Неверные данные';
 	}
 ?>
 

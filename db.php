@@ -2,8 +2,8 @@
   class DBInterface{
     public $db = null;
     function __construct(){
-      if(!file_exists("copycenter.sqlite")){
-        $this->db = new SQLite3("copycenter.sqlite");
+      if(!file_exists($_SERVER['DOCUMENT_ROOT'].'/copycenter.sqlite')){
+        $this->db = new SQLite3($_SERVER['DOCUMENT_ROOT'].'/copycenter.sqlite');
         $sql = "CREATE TABLE orders(
             id INTEGER PRIMARY KEY,
             phone_number TEXT,
@@ -20,7 +20,7 @@
           )";
         $this->db->query($sql);
       }else{
-        $this->db = new SQLite3("copycenter.sqlite");
+        $this->db = new SQLite3($_SERVER['DOCUMENT_ROOT'].'/copycenter.sqlite');
       }
     }
 
