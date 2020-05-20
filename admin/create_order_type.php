@@ -1,9 +1,5 @@
 <?php
   if(isset($_POST['order_type']) && isset($_POST['approx_price'])){
-    /////будет убрано
-    require('../db.php');
-    $dbInterface = new DBInterface();
-    /////////
     $orderType = $_POST['order_type'];
     $approxPrice = $_POST['approx_price'];
     $sql = "INSERT INTO order_types (order_type, approx_price) VALUES ('$orderType', $approxPrice)";

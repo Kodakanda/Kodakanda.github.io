@@ -3,9 +3,9 @@
     public $db = null;
     function __construct(){
       if(!file_exists($_SERVER['DOCUMENT_ROOT'].'/copycenter.sqlite')){
-        $this->db = new SQLite3($_SERVER['DOCUMENT_ROOT'].'/copycenter.sqlite');
+        $this->db = new PDO('sqlite:'.$_SERVER['DOCUMENT_ROOT'].'/copycenter.sqlite');
         $sql = "CREATE TABLE orders(
-            id INTEGER PRIMARY KEY,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             phone_number TEXT,
             client_name TEXT,
             comment TEXT,
@@ -20,7 +20,7 @@
           )";
         $this->db->query($sql);
       }else{
-        $this->db = new SQLite3($_SERVER['DOCUMENT_ROOT'].'/copycenter.sqlite');
+        $this->db = new PDO('sqlite:'.$_SERVER['DOCUMENT_ROOT'].'/copycenter.sqlite');
       }
     }
 

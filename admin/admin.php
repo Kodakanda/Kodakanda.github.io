@@ -1,35 +1,11 @@
 <?php
-/////будет убрано
-  require('../db.php');
-  $dbInterface = new DBInterface();
-/////////
-  $sql = "SELECT * FROM orders";
+  $sql = "SELECT * FROM orders INNER JOIN order_types ON orders.order_type_id = order_types.id";
   $res = $dbInterface->db->query($sql);
-  echo var_dump($res);
-  $ordersTable = null;
-  while($order = $res->fetchArray(SQLITE3_ASSOC)){
-    $id = $order['id'];
-    $clientName = $order['client_name'];
-    $clientPhone = $order['phone_number'];
-    $orderType = $order['order_type_id']; //заменится на тип заказа
-    $comment = $order['comment'];
-    $orderApproxPrice = 0; //заменится на приблизительную стоимость
-    $orderDate = $order['order_datetime'];
-    $ordersTable += "<tr>
-                      <td>$id</td>
-                      <td>$clientName</td>
-                      <td>$clientPhone</td>
-                      <td>$orderType</td>
-                      <td>$comment</td>
-                      <td>$orderApproxPrice</td>
-                      <td>$orderDate</td>
-                    </tr>";
-  }
+  $ordersTable = '';
+  $orders = $res->fetchAll();
+  // debug($orders);
 ?>
-<html>
-  <head>
-  </head>
-  <body>
+
     <table>
       <tr>
         <th>#</th>
@@ -40,7 +16,15 @@
         <th>Приблизительная стоимость</th>
         <th>Дата создания заказа</th>
       </tr>
-      <?= $ordersTable ?>
+      <?php foreach($orders as $order): ?>
+        <tr>
+          <td><?= $order[0] ?></td>
+          <td><?= $order['client_name'] ?></td>
+          <td><?= $order['phone_number'] ?></td>
+          <td><?= $order['order_type'] ?></td>
+          <td><?= $order['comment'] ?></td>
+          <td><?= $order['approx_price'] ?></td>
+          <td><?= $order['order_datetime'] ?></td>
+        </tr>
+      <?php endforeach; ?>
     </table>
-  </body>
-</html>
