@@ -16,7 +16,8 @@
         $sql = "CREATE TABLE order_types(
             id INTEGER PRIMARY KEY,
             order_type TEXT,
-            approx_price float       
+            approx_price float,
+            is_completed boolean DEFAULT 0      
           )";
         $this->db->query($sql);
       }else{

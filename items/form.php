@@ -13,17 +13,31 @@
 				('$clientPhone', '$clientName', '$orderComment', $orderTypeId)";
 		$dbInterface->db->query($sql);
 	}
-	//echo '<pre>'; print_r($dbInterface->db->query("SELECT * from orders")->fetchAll()); die();
 ?>
-<form method="POST">
-	<input type="text" name="client_name">
-	<select name="order_type_id">
+<p><b>Оформите заказ онлайн!</b></p>
+<form class="" method="POST">
+	<label for="client-name">Имя</label>
+	<input id="client-name" type="text" name="client_name">
+	<label for="order-type">Тип заказа</label>
+	<select id="order-type" name="order_type_id">
 		<?php foreach($order_types as $order_type) :?>
 			<option value="<?= $order_type['id'];?>"><?= $order_type['order_type'];?></option>
 		<?php endforeach;?>
-</select>
-  <!-- <input type="number" name="order_type_id"> -->
-  <input type="phone" name="client_phone">
-  <input type="textarea" name="order_comment">
-  <input type="submit">
+	</select>
+	<label for="client-phone">Номер телефона</label>
+  <input id="client-phone" type="phone" name="client_phone">
+	<label for="order-comment">Комментарий</label>
+  <input id="order-comment" type="textarea" name="order_comment">
+  <input type="submit" value="Отправить">
 </form>
+
+<style>
+form{
+	display: flex;
+	flex-direction: column;
+}
+form input{
+	margin-top: 5px;
+}
+
+</style>
