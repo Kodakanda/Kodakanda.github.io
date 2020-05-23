@@ -26,11 +26,12 @@
       <td><?= $order['comment'] ?></td>
       <td><?= $order['approx_price'] ?></td>
       <td><?= $order['order_datetime'] ?></td>
-      <td><input type="checkbox" <?= $order['is_completed'] == 1 ? 'checked' : false ?> /></td>
+      <td><label for="is_completed">test</label><input class="custom-checkbox" type="checkbox" id="is_comlpeted" value="yes" <?php $order['is_completed'] == 1 ? 'checked' : false ?> /></td>
     </tr>
   <?php endforeach; ?>
 </table>
 <style>
+
   .orders-table{
     margin: auto;
   }

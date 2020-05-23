@@ -1,3 +1,15 @@
+<?php 
+if (isset($_COOKIE['token'])) {
+  $token = $dbInterface->db->query("SELECT token FROM admins WHERE token='" . $_COOKIE['token'] . "'")->fetch();
+  if (!isset($token['token'])) {
+    header('Location: /auth');
+  die();
+  }
+} else {
+  header('Location: /auth');
+  die();
+}
+?>
 <html>
   <head>
     <title>CopyCenter manager panel</title>
