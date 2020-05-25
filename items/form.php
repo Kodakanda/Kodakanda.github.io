@@ -32,12 +32,11 @@
 </form>
 
 <style>
-form{
-	display: flex;
-	flex-direction: column;
-}
-form input{
-	margin-top: 5px;
-}
-
+	form{
+		display: flex;
+		flex-direction: column;
+	}
+	form input{
+		margin-top: 5px;
+	}
 </style>

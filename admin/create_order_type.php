@@ -11,21 +11,24 @@
   }
 ?>
 <html>
-  <head>
-  </head>
-  <body>
-    <div>
-      <form method="POST">
-        Order Type
-        <input type="text" name="order_type"/>
-        Approx price
-        <input type="text" name="approx_price"/>
-        <input type="submit"/>
-      </form>
-    </div>
-  </body>
-
-
-
-
+<div>
+  <form method="POST">
+    <label for="type">Название типа заказа</label>
+    <input id="type" type="text" name="order_type"/>
+    <label for="price">Приблизительная стоимость категории</label>
+    <input type="text" id="price" name="approx_price"/>
+    <input type="submit" value="Создать тип заказа"/>
+  </form>
+</div>
 </html>
+<style>
+	form{
+		display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+	}
+	form input{
+		margin-top: 5px;
+	}
+</style>

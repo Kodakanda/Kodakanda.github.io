@@ -5,8 +5,22 @@
   require('functions.php');
   require('db.php');
   $dbInterface = new DBInterface();
-  $routes = ['/' => ['main.php', 'layout'], '/web' => ['web.php','layout'], '/vacancy' => ['vacansii.php','layout'], '/polygraphy' => ['pechat.php', 'layout'], 
-            '/orders' => ['admin/admin.php', 'admin'], '/order_types' => ['admin/create_order_type.php', 'admin'],'/auth'=>['admin/auth.php','auth']];
+  $authorized = false;
+  if(isset($_COOKIE['token'])){
+    $token = $dbInterface->db->query("SELECT token FROM admins WHERE token='" . $_COOKIE['token'] . "'")->fetch();
+    if(isset($token['token'])) {
+      $authorized = true;
+    }
+  } 
+  $routes = [
+              '/' => ['main.php', 'layout'], 
+              '/web' => ['web.php','layout'], 
+              '/vacancy' => ['vacansii.php','layout'],
+              '/polygraphy' => ['pechat.php', 'layout'], 
+              '/orders' => ['admin/admin.php', 'admin'],
+              '/order_types' => ['admin/create_order_type.php', 'admin'],
+              '/auth'=>['admin/auth.php','auth']
+            ];
   $content = $routes[$_SERVER['REQUEST_URI']][0];
   $layout = $routes[$_SERVER['REQUEST_URI']][1];
 // debug([$content, $layout], false);

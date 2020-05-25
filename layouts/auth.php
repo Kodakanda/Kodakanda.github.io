@@ -1,7 +1,7 @@
 <html>
   <head>
-</head>
-<body>
-<?php require($content) ?>
-</body>
+  </head>
+  <body>
+  <?php require($content) ?>
+  </body>
 </html>

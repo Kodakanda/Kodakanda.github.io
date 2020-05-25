@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700");
 
 .nav-span{
-	font-size: 0.7em;
+	font-size: 0.6em;
 }
 
 html, body, div, span,  table, tbody, tfoot, thead, footer, header,  menu, nav, section {
@@ -11,20 +11,15 @@ html, body, div, span,  table, tbody, tfoot, thead, footer, header,  menu, nav, 
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 footer, header, menu, nav, section {
-	display: block;}
+	display: block;
+}
 
 #logo{
 margin-top: 10px;
-}
-.poloska {
-	background-image: url(images/Poloska.png);
-	background-position: absolute;
-	background-position: center;
-margin-top: -20px;
-color: #4a6e68;
 }
 .Privet {
 	font-size: 40pt;
@@ -1049,7 +1044,6 @@ body *, body *:before, body *:after {
 	}
 
 		ul li {
-			padding-left: 0.5em;
 			margin: 0.75em 0 0.75em 0;
 		}
 
@@ -1325,8 +1319,6 @@ body *, body *:before, body *:after {
 	
 		#header > .container {
 			padding: 20em 0 7em 0;
-			border-bottom: solid 2px #e5e5e9;
-			box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
 			background: rgba(0, 0, 0, 0.247);
 		}
 
@@ -1383,9 +1375,6 @@ body *, body *:before, body *:after {
 			padding-right: 2em;
 		}
 
-			#nav > ul > li:last-child {
-				padding-right: 0;
-			}
 
 			#nav > ul > li > a {
 				border: 0;

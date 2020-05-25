@@ -18,9 +18,10 @@
 					<nav id="nav">
 						<ul>
 							<li><a class="icon fa-home" href="/"><span class="nav-span">Главная </span></a></li>
-							<li><a class="icon fa-cog" href="/web"><span class="nav-span">Полиграфические услуги</span></a></li>
-							<li><a class="icon fa-retweet" href="/polygraphy"><span class="nav-span"> Печатные услуги</span></a></li>
-							<li><a class="icon fa-sitemap" href="/vacancy"><span class="nav-span"> Вакансии</span></a></li>
+							<!-- <li><a class="icon fa-cog" href="/web"><span class="nav-span">Полиграфические услуги</span></a></li> -->
+							<li><a class="icon fa-retweet" href="/polygraphy"><span class="nav-span">Печатные услуги</span></a></li>
+							<li><a class="icon fa-sitemap" href="/vacancy"><span class="nav-span">Вакансии</span></a></li>
+							<?php if($authorized == true): ?><li><a class="icon fa-cog" href="/orders"><span class="nav-span">Заказы</span></a></li><?php endif; ?>
 						</ul>
 					</nav>
 				</div>
