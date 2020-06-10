@@ -41,21 +41,21 @@
 <form class="" method="POST">
     <?php if (!empty($errors)):?> <span class="form_error">Проверьте форму на ошибки!</span> <?php endif;?>
     <?php if ($success):?> <span class="form_success">Ваша заявка принята!</span> <?php endif;?>
-    <label for="client-name">Имя</label>
+    <label for="client-name">Имя<span class="form_required">*</span></label>
     <?php if (isset($errors['client_name'])):?><span class="error"><?=$errors['client_name'];?></span><?php endif;?>
-    <input id="client-name" type="text" name="client_name" value="<?= $client_name; ?>">
+    <input id="client-name" type="text" name="client_name" required value="<?= $client_name; ?>">
     <label for="order-type">Тип заказа</label>
     <select id="order-type" name="order_type_id">
     <?php foreach($order_types as $order_type) :?>
         <option <?php if ($order_type_id == $order_type['id']):?> selected <?php endif;?>value="<?= $order_type['id'];?>"><?= $order_type['order_type'];?></option>
     <?php endforeach;?>
     </select>
-    <label for="client-phone">Номер телефона <span class="form_required">*</span></label>
+    <label for="client-phone">Номер телефона<span class="form_required">*</span></label>
     <?php if (isset($errors['client_phone'])):?><span class="error"><?=$errors['client_phone'];?></span><?php endif;?>
-    <input id="client-phone" type="phone" name="client_phone" required value="<?= $client_phone; ?>">
-    <label for="order-comment">Комментарий</label>
+    <input id="client-phone" placeholder="+79001234567" type="phone" name="client_phone" required value="<?= $client_phone; ?>">
+    <label for="order-comment">Комментарий<span class="form_required">*</span></label>
     <?php if (isset($errors['order_comment'])):?><span class="error"><?=$errors['order_comment'];?></span><?php endif;?>
-    <input id="order-comment" type="textarea" name="order_comment" value="<?= $order_comment; ?>">
+    <input id="order-comment" type="textarea" name="order_comment" required value="<?= $order_comment; ?>">
     <input type="submit" value="Отправить">
 </form>
 
