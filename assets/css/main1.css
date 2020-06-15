@@ -1305,10 +1305,12 @@ body *, body *:before, body *:after {
 
 	#header {
 		position: relative;
-		background: url(images/Banner1111.jpg);
-		background-size: 100%;
-		text-align: center;
-		
+		background: url(images/Banner1111.jpg) no-repeat;
+		-moz-background-size: 100%; 
+    -webkit-background-size: 100%; 
+    -o-background-size: 100%; 
+		background-size: cover;
+		text-align: center;	
 	}
 	
 		#header > .container {
