@@ -3,7 +3,6 @@
   $res = $dbInterface->db->query($sql);
   $ordersTable = '';
   $orders = $res->fetchAll();
-  // debug($orders);
 ?>
 
 <table class="orders-table">

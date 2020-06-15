@@ -23,10 +23,8 @@ if (isset($_COOKIE['token'])) {
     <div id="page">
       <section id="header">
         <div class="container"> 
-          <!-- Логотип -->
           <h1 id="logo"><a href="/">КОПИЦЕНТР</a></h1>
           <p> Make everything awesome</p>
-          <!-- Nav -->
           <nav id="nav">
             <ul>
               <li><a class="icon fa-home" href="/orders"><span class="nav-span">Заказы</span></a></li>

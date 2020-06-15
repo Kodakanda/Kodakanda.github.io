@@ -7,11 +7,9 @@
 
 	$action = (isset($_GET['id'])) ? 'Изменить' : 'Создать';
 
-	// отправка формы
 	if (isset($_POST['order_type']) && isset($_POST['approx_price'])) {
 		$order_type_name = trim($_POST['order_type']);
 		$order_type_approx_price = $_POST['approx_price'];
-		// валидация
 		if (empty($order_type_name) || mb_strlen($order_type_name) < 2 || mb_strlen($order_type_name) > 25) {
 			$errors['order_type_name'] = 'Название типа заказа должно быть от 2 до 25 символов!';
 		}
@@ -23,7 +21,6 @@
 				'order_type_name' => $order_type_name,
 				'order_type_approx_price' => $order_type_approx_price
 			];
-			// изменение типа заказа
 			if (isset($_GET['id'])) {
 				$sth = $dbInterface->db->prepare("UPDATE order_types SET order_type = :order_type_name, approx_price = :order_type_approx_price WHERE id = :id");
 				$data['id'] = $_GET['id'];
@@ -32,7 +29,6 @@
 					'msg' => 'Сохранено!'
 				];
 			} else {
-				// создание типа заказа
 				$sth = $dbInterface->db->prepare("INSERT INTO order_types (order_type, approx_price) VALUES (:order_type_name, :order_type_approx_price)");
 				$success = [
 					'status' => true,
@@ -48,12 +44,10 @@
 
 	if (isset($_GET['id']) && empty($errors) && !$is_new) {
 		if (isset($_GET['delete'])) {
-			// удаление типа заказа
 			$sth = $dbInterface->db->prepare("DELETE FROM order_types WHERE id = ?");
 			$sth->execute([$_GET['id']]);
 			header("Location: /order_types");
 		} else {
-			// отображаем данные, если форма редактирования
 			$sth = $dbInterface->db->prepare("SELECT * FROM order_types WHERE id = ?");
 			$sth->execute([$_GET['id']]);
 			$order_type = $sth->fetch(PDO::FETCH_ASSOC);

@@ -3,7 +3,6 @@ $sql = "SELECT * FROM order_types";
 $res = $dbInterface->db->query($sql);
 $ordersTable = '';
 $order_types = $res->fetchAll();
-// debug($order_types);
 ?>
 	<br>
 		<div style="padding-left:100px;"><a style="height:25px;" title="Добавить" class='button' href="/order_type_edit">Добавить новый тип заказа</a></div>

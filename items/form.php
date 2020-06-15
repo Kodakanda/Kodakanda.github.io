@@ -52,7 +52,7 @@
     </select>
     <label for="client-phone">Номер телефона<span class="form_required">*</span></label>
     <?php if (isset($errors['client_phone'])):?><span class="error"><?=$errors['client_phone'];?></span><?php endif;?>
-    <input id="client-phone" placeholder="+79001234567" type="phone" name="client_phone" required value="<?= $client_phone; ?>">
+    <input id="client-phone" placeholder="+79001234567" type="tel" name="client_phone" required value="<?= $client_phone; ?>">
     <label for="order-comment">Комментарий<span class="form_required">*</span></label>
     <?php if (isset($errors['order_comment'])):?><span class="error"><?=$errors['order_comment'];?></span><?php endif;?>
     <input id="order-comment" type="textarea" name="order_comment" required value="<?= $order_comment; ?>">

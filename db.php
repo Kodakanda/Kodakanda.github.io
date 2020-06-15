@@ -32,10 +32,8 @@
       $username = "admin";
       $password = "copy1010df";
       $hash = password_hash($password, PASSWORD_BCRYPT);
-      // debug([$username, $hash]);
       $sql = "INSERT INTO admins (username, password, token) VALUES ('$username', '$hash', 'token')";
       $this->db->query($sql);
-      // die('test');
       } else {
         $this->db = new PDO('sqlite:'.$_SERVER['DOCUMENT_ROOT'].'/copycenter.sqlite');
         $this->db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );

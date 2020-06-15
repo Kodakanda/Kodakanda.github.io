@@ -1,7 +1,4 @@
 <?php 
-// ini_set('display_errors', '1');
-// ini_set('display_startup_errors', '1');
-// error_reporting(E_ALL);
 	require('functions.php');
 	require('db.php');
 	$dbInterface = new DBInterface();
@@ -27,7 +24,6 @@
 		'/auth'=>['admin/auth.php','auth']
 	];
 
-	// получаем урл без GET параметров
 	$uri = parse_url(preg_replace('/&/', '?', $_SERVER["REQUEST_URI"], 1))['path'];
 
 	$content = $routes[$uri][0];
