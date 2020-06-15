@@ -2,7 +2,9 @@
 setcookie('token', NULL, 0, '/');
 $error = '';
 if (isset($_POST['username']) && isset($_POST['password'])) {
-  $hash = $dbInterface->db->query("SELECT password FROM admins WHERE username='" . $_POST['username'] . "'")->fetch();
+  $sth = $dbInterface->db->query("SELECT password FROM admins WHERE username=:username");
+  $sth->execute(['username' => $_POST['username']]);
+  $hash = $sth->fetch();
   if (isset($hash['password']) && password_verify($_POST['password'], $hash['password'])) {
     $token = md5(uniqid(rand(), true));
     $dbInterface->db->query("UPDATE admins SET token ='$token'");

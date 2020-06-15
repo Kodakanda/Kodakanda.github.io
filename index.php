@@ -8,7 +8,9 @@
 
 	$authorized = false;
 	if(isset($_COOKIE['token'])){
-		$token = $dbInterface->db->query("SELECT token FROM admins WHERE token='" . $_COOKIE['token'] . "'")->fetch();
+		$sth = $dbInterface->db->prepare("SELECT token FROM admins WHERE token=:token");
+		$sth->execute(['token' => $_COOKIE['token']]);
+		$token = $sth->fetch();
 		if(isset($token['token'])) {
 			$authorized = true;
 		}
