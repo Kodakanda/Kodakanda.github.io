@@ -56,7 +56,7 @@
     <label for="order-comment">Комментарий<span class="form_required">*</span></label>
     <?php if (isset($errors['order_comment'])):?><span class="error"><?=$errors['order_comment'];?></span><?php endif;?>
     <input id="order-comment" type="textarea" name="order_comment" required value="<?= $order_comment; ?>">
-    <label for="form-accept-checbox"><input id="form-accept-checkbox" type="checkbox">Согласие на обработку персональных данных</label>
+    <label for="form-accept-checkbox"><input id="form-accept-checkbox" type="checkbox">Согласие на обработку персональных данных</label>
     <input disabled id="order-form-send" type="submit" value="Отправить">
 </form>
 <script src="/assets/js/form.js"></script>
