@@ -24,7 +24,7 @@ if (isset($_COOKIE['token'])) {
       <section id="header">
         <div class="container"> 
           <!-- Логотип -->
-          <h1 id="logo"><a href="/">Copy Center</a></h1>
+          <h1 id="logo"><a href="/">КОПИЦЕНТР</a></h1>
           <p> Make everything awesome</p>
           <!-- Nav -->
           <nav id="nav">
@@ -39,7 +39,7 @@ if (isset($_COOKIE['token'])) {
       <footer id="footer">
         <div id="copyright" class="container">
           <ul class="links">
-            <li> Копи-Центр на Коммунистическом || 2019 г. </li>
+            <li> Копи-Центр на Коммунистическом || 2020 г. </li>
           </ul>
 				</div>
       </footer>

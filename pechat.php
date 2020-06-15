@@ -8,9 +8,8 @@
 						<article class="box post">
 							<header>
 								<br>
-								<h2> В данный момент эта часть ресурса находится в разработке :) </h2>
 							</header>
-							<img src ="images/under.jpg" width="100%">
+							<img src ="images/priceList.jpg" width="100%">
 							</ul>
 						</article>
 
