@@ -1202,6 +1202,15 @@ body *, body *:before, body *:after {
 		button:hover,
 		.button:hover {
 			background: #fd887a;
+			cursor: pointer;
+		}
+		input[type="button"]:disabled,
+		input[type="submit"]:disabled,
+		input[type="reset"]:disabled,
+		button:disabled,
+		.button:disabled {
+			background: #ffb7af;
+			cursor: default;
 		}
 
 		.custom-checkbox+label {
