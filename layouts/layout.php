@@ -23,7 +23,7 @@
 				</div>
 				
 			</section>
-      <?= require($content) ?>
+      <?php require($content) ?>
       <footer id="footer">
 					<div class="container">
 						<header>
