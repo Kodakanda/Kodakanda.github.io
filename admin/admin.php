@@ -19,8 +19,8 @@
   <?php foreach($orders as $order): ?>
     <tr>
       <td><?= $order[0] ?></td>
-      <td><?= $order['client_name'] ?></td>
-      <td><?= $order['phone_number'] ?></td>
+      <td><?= htmlspecialchars($order['client_name']) ?></td>
+      <td><?= htmlspecialchars($order['phone_number']) ?></td>
       <td><?= $order['order_type'] ?></td>
       <td><?= htmlspecialchars($order['comment'], ENT_QUOTES) ?></td>
       <td><?= $order['approx_price'] ?></td>
