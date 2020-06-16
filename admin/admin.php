@@ -22,7 +22,7 @@
       <td><?= $order['client_name'] ?></td>
       <td><?= $order['phone_number'] ?></td>
       <td><?= $order['order_type'] ?></td>
-      <td><?= $order['comment'] ?></td>
+      <td><?= htmlspecialchars($order['comment'], ENT_QUOTES) ?></td>
       <td><?= $order['approx_price'] ?></td>
       <td><?= $order['order_datetime'] ?></td>
       <td><input type="checkbox" id="is_comlpeted" <?= $order['is_completed'] == 1 ? 'checked' : false ?> /></td>
